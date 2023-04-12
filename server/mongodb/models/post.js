@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 const Post = new mongoose.Schema({
-  name: { type: 'string', required: true },
-  prompt: { type: 'string', required: true },
-  photo: { type: 'string', required: true },
+  name: { type: String, required: true },
+  prompt: { type: String, required: true },
+  photo: { type: String, required: true },
 });
 
 const PostSchema = new mongoose.model('Post', Post);

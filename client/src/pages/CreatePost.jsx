@@ -26,7 +26,7 @@ const CreatePost = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ prompt: form.prompt }),
+          body: JSON.stringify({ prompt: `${form.prompt.toString()}` }),
         });
 
         const data = await response.json();
@@ -45,14 +45,14 @@ const CreatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (form.prompt && prompt.photo) {
+    if (form.prompt && form.photo) {
       setLoading(true);
 
       try {
         const response = await fetch('http://localhost:8080/api/v1/post', {
           method: 'POST',
           headers: { 'Content-Type': 'application.json' },
-          body: JSON.stringify(form),
+          body: JSON.stringify({ ...form }),
         });
 
         await response.json();
@@ -138,13 +138,13 @@ const CreatePost = () => {
           </button>
         </div>
         <div className="mt-10">
-          <p className="mt-2 text-[#666e75 text-[14px]]">
+          <p className="mt-2 text-[#666e75] text-[14px]">
             Once you have created the image you want, you can share it with
             others in the community
           </p>
           <button
             type="submit"
-            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md test-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             {loading ? 'Sharing...' : 'Share with the community'}
           </button>
