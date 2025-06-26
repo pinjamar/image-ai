@@ -8,6 +8,11 @@ import dalleRoutes from './routes/dalleRoutes.js';
 
 dotenv.config();
 
+console.log(
+  'OpenAI API Key:',
+  process.env.OPENAI_API_KEY ? 'Loaded' : 'Missing'
+);
+
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));

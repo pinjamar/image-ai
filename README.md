@@ -47,7 +47,11 @@ To set up a development environment, please follow these steps:
    npm install
    ```
 
-3. Install nodemon package in the server folder and run the app - both client and server at the same time
+3. Install nodemon package in the server folder
+
+   `npm install --save-dev nodemon`
+
+4. run the app - both client and server at the same time
 
    ```shell
    cd image-ai/client
@@ -56,9 +60,16 @@ To set up a development environment, please follow these steps:
    npm start
    ```
 
-   Install additional necessary packages that you can find in package.json.
+5. Connect to MongoDb either online or locally
 
-   Project will be running in the browser.
+For local connection: Open command prompt and open it as an administrator and run
+``net start MongoDB`
 
-   Copy your local address from the terminal to the browser to view the frontend and start creating images.
-   Check if your server is running at [http://localhost:8080](http://localhost:8080).
+Install additional necessary packages that you can find in package.json.
+
+Project will be running in the browser.
+
+Copy your local address from the terminal to the browser to view the frontend and start creating images.
+Check if your server is running at [http://localhost:8080](http://localhost:8080).
+
+## CURRENTLY DOESN'T WORK BECAUSE API IS NO LONGER FREE AND THEREFORE NO LONGER USABLE
